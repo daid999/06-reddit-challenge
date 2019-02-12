@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Reddit Challenge</title>
+  </head>
+
+  <body>
+
+    <script type="text/javascript">
+      // DESCRIPTION: For a given number input a new number should get printed
+      // by adding one to each of its digits. E.g. 998 becomes 10109.
+
+      let userStrInt = prompt("Please enter an integer.","");
+
+      // Function to modify digits of an integer (of type string).
+      function modStrInt(strInt) {
+        let oldStrDigit; // The string digit of the user input.
+        let oldNumDigit; // The number digit of the user input.
+        let newNumDigit; // The modified number digit.
+        let newStrDigit; // The modified string digit.
+        let newStrInt = ""; // The complete modified integer as a string.
+
+        let i = 0;
+        let strLength = strInt.length;
+
+        while(i < strLength) {
+          oldStrDigit = strInt.charAt(i);
+          oldNumDigit = Number(oldStrDigit);
+          newNumDigit = oldNumDigit + 1;
+          newStrInt += String(newNumDigit);
+          i++;
+        }
+        return newStrInt;
+      }
+
+
+      // TESTING AREA
+      console.log(modStrInt(userStrInt));
+    </script>
+
+  </body>
+
+</html>
