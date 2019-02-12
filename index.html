@@ -13,6 +13,7 @@
       // by adding one to each of its digits. E.g. 998 becomes 10109.
 
       let userStrInt = prompt("Please enter an integer.","");
+      let sequenceLength = prompt("Please enter how many times you would like to iterate this modification.","");
 
       // Function to modify digits of an integer (of type string).
       function modStrInt(strInt) {
@@ -35,9 +36,25 @@
         return newStrInt;
       }
 
+      // A function to conduct the above string modification 5 times.
+      function modSequence(strInt, seqLen) {
+        console.log(strInt); // Echo of user input.
+
+        let newStrIntSeq = modStrInt(strInt);
+        console.log(newStrIntSeq); // Integer after first iteration.
+
+        let i = 1;
+
+        while (i < seqLen) { // Integer after 2nd, 3rd... ith iteration.
+          newStrIntSeq = modStrInt(newStrIntSeq);
+          i++;
+          console.log(newStrIntSeq);
+        }
+        return "Sequence Complete!";
+      }
 
       // TESTING AREA
-      console.log(modStrInt(userStrInt));
+      console.log(modSequence(userStrInt, sequenceLength));
     </script>
 
   </body>
